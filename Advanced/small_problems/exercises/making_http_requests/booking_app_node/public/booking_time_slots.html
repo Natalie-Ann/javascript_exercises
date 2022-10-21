@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Time Slots</title>
+    <script src="booking_time_slots_3.js"></script>
+    <style>
+        #addStudent {
+            margin-top: 20px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Schedules</h1>
+    <form id="mainForm" action="post" action="api/bookings">
+        <label for="id">Please select one schedule</label>
+        <select id="id" name="id">
+            <option value="">(Select a schedule)</option>
+        </select>
+        <br>
+        <label for="student_email">Email:</label>
+        <input type="email" id="student_email" name="student_email">
+        <button type="submit" id="submitMainForm">Submit</button>
+    </form>
+    <form id="addStudent" action="api/students" method="post">
+        <fieldset class="student"><legend>Add student info</legend>
+          <div>
+            <label for="email">Email: </label>
+            <input id="studentEmail" type="email" name="email" />
+          </div>
+          <div>
+            <label for="name">Name: </label>
+            <input id="studentName" type="text" name="name" />
+          </div>      
+          <div>
+            <label for="booking_sequence">Booking sequence: </label>
+            <input id="bookingSequence" type="text" name="booking_sequence" />
+          </div>      
+        </fieldset>
+        <button id="submitStudent" type="submit">Submit</button>
+        <button id="cancelStudent" type="reset">Cancel</button>
+      </form>
+</body>
+</html>
